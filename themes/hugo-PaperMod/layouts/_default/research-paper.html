@@ -1,0 +1,218 @@
+{{- define "main" }}
+
+<style>
+/* Light mode styles */
+.academic-authors {
+  font-size: 1.1em;
+  margin: 0.5rem 0 1rem 0;
+  color: #666;
+  font-weight: 500;
+}
+
+.author-affiliation {
+  font-size: 0.9em;
+  font-style: italic;
+  color: #888;
+}
+
+.academic-metadata {
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background: #f8f9fa;
+  border-left: 4px solid var(--primary);
+}
+
+.academic-doi, .academic-url {
+  margin: 0.25rem 0;
+  font-size: 0.95em;
+}
+
+.academic-doi strong, .academic-url strong {
+  color: #333;
+  font-weight: 600;
+}
+
+.academic-doi a, .academic-url a {
+  color: var(--primary);
+  box-shadow: 0 1px;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.academic-doi a:hover, .academic-url a:hover {
+  text-decoration: underline;
+}
+
+.academic-abstract {
+}
+
+.academic-abstract h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.abstract-content {
+  line-height: 1.6;
+  color: #444;
+}
+
+.abstract-content p {
+  margin-bottom: 1rem;
+}
+
+.abstract-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Dark mode styles */
+.dark .academic-authors {
+  color: #b3b3b3;
+}
+
+.dark .author-affiliation {
+  color: #999;
+}
+
+.dark .academic-metadata {
+  background: #1f2937;
+  border-left-color: var(--primary);
+}
+
+.dark .academic-doi strong, 
+.dark .academic-url strong {
+  color: #e5e7eb;
+}
+
+.dark .academic-abstract h2 {
+  color: #f3f4f6;
+}
+
+.dark .abstract-content {
+  color: #d1d5db;
+}
+</style>
+
+<article class="post-single">
+  <header class="post-header">
+    {{ partial "breadcrumbs.html" . }}
+    <h1 class="post-title entry-hint-parent">
+      {{ .Title }}
+      {{- if .Draft }}
+      <span class="entry-hint" title="Draft">
+        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
+          <path
+            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+        </svg>
+      </span>
+      {{- end }}
+    </h1>
+
+    {{- /* Academic Authors Section */ -}}
+    {{- if .Params.authors }}
+    <div class="academic-authors">
+      {{- if reflect.IsSlice .Params.authors }}
+        {{- $authorCount := len .Params.authors }}
+        {{- range $index, $author := .Params.authors }}
+          {{- if reflect.IsMap $author }}
+            {{- if $author.name }}{{ $author.name }}{{- else }}{{ $author }}{{- end }}
+            {{- if $author.affiliation }} <span class="author-affiliation">({{ $author.affiliation }})</span>{{- end }}
+          {{- else }}
+            {{ $author }}
+          {{- end }}
+          {{- if lt (add $index 1) $authorCount }}, {{ end }}
+        {{- end }}
+      {{- else }}
+        {{ .Params.authors }}
+      {{- end }}
+    </div>
+    {{- end }}
+
+    {{- if .Description }}
+    <div class="post-description">
+      {{ .Description }}
+    </div>
+    {{- end }}
+
+    {{- /* Academic Metadata Section */ -}}
+    {{- if not (.Param "hideMeta") }}
+    <div class="post-meta">
+      {{- partial "post_meta.html" . -}}
+      {{- partial "translation_list.html" . -}}
+      {{- partial "edit_post.html" . -}}
+      {{- partial "post_canonical.html" . -}}
+    </div>
+    {{- end }}
+
+  </header>
+   {{- if or .Params.doi .Params.url_source }}
+    <div class="academic-metadata">
+      {{.Params.publication }}
+      {{- if .Params.doi }}
+      <div class="academic-doi">
+        <strong>DOI:</strong> 
+        {{- if hasPrefix .Params.doi "http" }}
+          <a href="{{ .Params.doi }}" target="_blank" rel="noopener">{{ .Params.doi }}</a>
+        {{- else }}
+          <a href="https://doi.org/{{ .Params.doi }}" target="_blank" rel="noopener">{{ .Params.doi }}</a>
+        {{- end }}
+      </div>
+      {{- end }}
+
+      {{- if .Params.url_source }}
+      <div class="academic-url">
+        <strong>Source:</strong> 
+        <a href="{{ .Params.url_source }}" target="_blank" rel="noopener">{{ .Params.url_source }}</a>
+      </div>
+      {{- end }}
+
+    </div>
+    {{- end }}
+  {{- $isHidden := (.Param "cover.hiddenInSingle") | default (.Param "cover.hidden") | default false }}
+  {{- partial "cover.html" (dict "cxt" . "IsSingle" true "isHidden" $isHidden) }}
+
+  {{- /* Academic Abstract Section */ -}}
+  {{- if .Params.abstract }}
+  <section class="academic-abstract">
+    <h2>Abstract</h2>
+    <div class="abstract-content">
+      {{ .Params.abstract | markdownify }}
+    </div>
+  </section>
+  {{- end }}
+
+  {{- if (.Param "ShowToc") }}
+  {{- partial "toc.html" . }}
+  {{- end }}
+
+  {{- if .Content }}
+  <div class="post-content">
+    {{- if not (.Param "disableAnchoredHeadings") }}
+    {{- partial "anchored_headings.html" .Content -}}
+    {{- else }}{{ .Content }}{{ end }}
+  </div>
+  {{- end }}
+
+  <footer class="post-footer">
+    {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
+    <ul class="post-tags">
+      {{- range ($.GetTerms $tags) }}
+      <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+      {{- end }}
+    </ul>
+    {{- if (.Param "ShowPostNavLinks") }}
+    {{- partial "post_nav_links.html" . }}
+    {{- end }}
+    {{- if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
+    {{- partial "share_icons.html" . -}}
+    {{- end }}
+  </footer>
+
+  {{- if (.Param "comments") }}
+  {{- partial "comments.html" . }}
+  {{- end }}
+</article>
+
+{{- end }}{{/* end main */}}

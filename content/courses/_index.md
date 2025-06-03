@@ -1,0 +1,24 @@
+---
+title: Courses
+---
+
+## Current Offerings
+
+At the University of Macau, I mainly teach at the graduate level. Due to the unique student mix, these courses can be delivered both in Chinese or English. The materials I chose are in dual-language. These are the current offerings:
+
+- *Introduction to Educational Research* ([Syllabus](/files/educ8005_syllabus_2022V2.pdf))
+- *Comparative and International Education* ([Syllabus](/files/EDAD7256syllabusCHN_2021spring.pdf))
+
+I also engaged in the university-wide general education program for undergraduate students. I currently teach the following GE:
+
+- *Globalization and Education* ([Syllabus](/files/GEGA2002syllabus_2019fall.pdf))
+
+## Developed Courses
+
+Besides these current offerings, I have developed the following courses for advanced students.
+
+- *Teaching Knowledge*: The central task of contemporary schools of education is to prepare future teachers. But to shape the future, one must understand the past and present. For teacher educators, we cannot avoid undertand teaching practice. Though teaching as an activity is familair to almost everone but few can master. At the core of the issue lies the under-theorization of teaching as a professional expertise. As one of the oldest human endeavers, every human society has some sort of teaching traditions. But professional teacher and socially organized schooling is a much more recent phenomenon. The marriage between modern university and teacher preparation is an even more recent event. All these historical backdrops lead us toward a situation where we attempt to understand teaching requires theoretical rigor as well as contextual sensitivity.
+
+	This course provides an opportunity to consider these issues. It was conceived with a comparative approach to understand teaching and learning. The comparison we use has both a traditional and modern bearings. In the traditional sense, comparison is a central part of educational inquiry. Our understanding of schooling depends on the portrait of foreign experiences as well as on the borrowing from other experiences. Beyond that traditional approach, teaching could also be conceptualized as one of the professions, among other exclusive occupational groups which wields abstract knowledge in ther classrooms. In this sense, being a teacher bears some similarity with other expert professions. Then the other comparative question we will try to answer is : what makes the teaching professions unique? We will be examining case studies of professional expertises whose clienteles are also human beings.
+- *Youth, Culture, and Education*: Education is the systematic investigation of how humans come to know (Kalantzis and Cope, 2012: 6). It is one of the "metadisciplinary disscipline" because knowledge permeates human societies, and thus one can discover educational process almost everywhere. This course, therefore, adopts such a broad conceptualization of education and puts it underneath a particular lens: youth culture. This is because meaning-making is the quintessential human quality, and studying how young people produce and understand meanings will lead us to develop a better curriculum, pedagogy, and learning environment. By culture, I adopted the definition coined by Clifford Geertz, "it denotes an historically transmitted pattern of meanings embodied in symbols, a system of inherited conceptions expressed in symbolic forms by means of which men communicate, perpetuate, and develop their knowledge about and attitudes toward life." (1973: 89). In short, we will look at how young people navigate through formal and informal settings of learning. We will examine these issues using formal or interpretive methods. The emphasis is on the social significance of education. 
+- *Social Analysis of the School Organization*: Humans are social animals. When there are people, there will be social institutions. Many of the learning takes place inside institutional settings: schools, colleges, and universities. In fact, today's young people spend a significant proportion of their time inside these institutions. These "schooled society" characteristics thus put new importance on understanding our social organizations. This course, therefore, leads the students to look at the organizational aspect of our learning institutions. Aided by recent scholarship on social organizations, we will analyze topics such as attachment, leadership, trust, and power. We will employ various strands of sociological theory to examine the history and current status of school organizations. This course aims to guide the student to develop insights into the human aspect of the school organizations. 
