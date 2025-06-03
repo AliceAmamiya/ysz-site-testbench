@@ -10,16 +10,16 @@ params:
     enabled: true
     title: "Yisu Zhou" # optional default will be site title
     subtitle: "Associate Professor of Education Policy & Sociology"
-    imageUrl: "/author/admin/avatar.jpg" # optional
+    imageUrl: "./author/admin/avatar.jpg" # optional
     imageWidth: 180 # custom size
     imageHeight: 180 # custom size
     buttons:
       - name: Biography
-        url: "/biography"
+        url: "./biography"
       - name: Translations
-        url: "/translations"
+        url: "./translations"
       - name: Featured Publications
-        url: "/publications"
+        url: "./publications"
 
 
   socialIcons: # optional
@@ -40,17 +40,17 @@ params:
 menu: 
   main: 
     - name: Biography
-      url: "/biography"
+      url: "./biography"
       weight: 10
     - name: Publications
-      url: "/publications"
+      url: "./publications"
       weight: 20
     - name: Courses
-      url: "/courses"
+      url: "./courses"
       weight: 30
     - name: Translations
-      url: "/translations"
+      url: "./translations"
       weight: 40
     - name: CV
-      url: "/files/2024_yisu_cv.pdf"
+      url: "./files/2024_yisu_cv.pdf"
       weight: 50
