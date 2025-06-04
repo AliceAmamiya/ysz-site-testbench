@@ -31,3 +31,7 @@ node_modules
 
 #vscode 
 .vscode
+
+#public
+/public/
+.hugo_build.lock
