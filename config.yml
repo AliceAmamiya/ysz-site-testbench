@@ -6,6 +6,7 @@ theme: hugo-PaperMod
 copyright: "&copy; Yisu Zhou"
 
 params:
+  env: production
   profileMode:
     enabled: true
     title: "Yisu Zhou" # optional default will be site title
@@ -21,7 +22,6 @@ params:
       - name: Featured Publications
         url: "./publications"
 
-
   socialIcons: # optional
     - name: "twitter"
       url: "https://twitter.com/makzhou"
@@ -36,6 +36,10 @@ params:
   homeInfoParams: 
     title: "Zhou Yisu"
     content: "Associate Professor of Education Policy & Sociology"
+
+services:
+  googleAnalytics:: 
+    id: G-PSEN560TRQ
 
 menu: 
   main: 
