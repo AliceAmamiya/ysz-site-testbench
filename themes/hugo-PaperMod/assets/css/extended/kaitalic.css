@@ -1,23 +1,8 @@
-/* For styling the rendered Markdown */
-
 @font-face {
-    font-family: 'yisu-minchou';
-    unicode-range: U+0000-00FF;
-    font-style: italic;
-    src: local('Georgia-Italic');
-    /* Or other Italic fonts on your local computer */
-}
-
-@font-face {
-    font-family: 'yisu-minchou';
+    font-family: 'yisu-kaiti';
     unicode-range: U+4E00-9FFF;
     font-style: italic;
     /* It applies ONLY on Chinese characteres */
-    src: local('BieuKai'), local('STKaiti'), local('KaiTi'), local('楷体');
+    src: local('BieuKai'), local('STKaiti'), local('KaiTi'), local('楷体'), url('../fzktj.ttf') format('truetype');
     /* Or other KaiTi-liked fonts on your local computer */
-}
-
-em {
-    font-family: 'yisu-minchou';
-    /* Actually it can be named as anything, but I'll keep this as a joke(?)*/
 }

@@ -1,0 +1,8 @@
+em {
+    font-family: 'yisu-kaiti','Source Serif 4', serif, BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Ubuntu,Cantarell,open sans,helvetica neue,sans-serif;
+    /* Actually it can be named as anything, but I'll keep this as a joke(?)*/
+}
+
+.post-content, .abstract-content{
+    font-family: 'Source Serif 4',"Noto Serif SC",serif;
+}
